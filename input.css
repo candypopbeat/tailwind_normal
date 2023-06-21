@@ -1,0 +1,21 @@
+/* Tailwind用 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 下記はオリジナル */
+
+/* フッターを最下部固定にするために */
+html, body {
+  height: 100%;
+}
+
+footer {
+  position: sticky; /* フッターを最下部固定にするために */
+  top: 100%; /* フッターを最下部固定にするために */
+  background-color: skyblue;
+  font-size: 1.3rem;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
