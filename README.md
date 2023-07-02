@@ -2,7 +2,7 @@
 <br>
 
 ## 使い方（下記２つのどちらか）
-- クローンする
+- クローンして、"npm install"して、"npm run dev" or "npm run build" する
 - クローンはせずに下記のドキュメント通りに進めてもOK
 <br>
 
