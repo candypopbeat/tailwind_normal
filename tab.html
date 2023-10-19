@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- dist.css に Tailwind も入っている -->
+    <link rel="stylesheet" href="dist.css" />
+
+    <title>Tab | Tailwind CSS Test</title>
+  </head>
+
+  <body>
+    <div class="container mb-10 pt-10">
+
+      <div class="mb-4">Menu</div>
+      <ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box mb-8">
+        <li><a href="index.html">Index</a></li>
+        <li><a href="tab.html">Tab</a></li>
+      </ul>
+    
+      <section id="tabs">
+        <ul id="tabsBtns">
+          <li class="active">
+            <button class="tabs-btn" type="button">Tab 1</button>
+          </li>
+          <li>
+            <button class="tabs-btn" type="button">Tab 2</button>
+          </li>
+        </ul>
+        <div id="tabsContents">
+          <div class="block">
+            <h2 class="alert alert-primary">テストタイトル１</h2>
+            <p>文章です文章です文章です文章です文章です文章です文章です文章です文章です文章です文章です</p>
+            <p>文章です文章です文章です文章です文章です文です文章です文章です</p>
+            <p>文章です文章です文章です文章です文章です文文章です</p>
+          </div>
+          <div class="hidden">
+            <h2 class="alert alert-info">テストタイトル２</h2>
+            <p>文章です文章です文章です文章です文章です文章です文章です文章です文章です文章です文章です</p>
+            <p>文章です文章です文章です文章です文章です文です文章です文章です</p>
+            <p>文章です文章です文章です文章です文章です文文章です</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="mt-10">&copy; Tailwind Test Tab.</footer>
+
+    <script>
+      const tabs = document.getElementById("tabs");
+      if (tabs) {
+        const btns = document.getElementById("tabsBtns").children;
+        const contents = document.getElementById("tabsContents").children;
+        for (let i = 0; i < btns.length; i++) {
+          btns[i].firstElementChild.addEventListener("click", (c) => {
+            c.target.parentNode.classList.add("active");
+            contents[i].classList.remove("hidden");
+            contents[i].classList.add("block");
+            for (let ri = 0; ri < btns.length; ri++) {
+              if (i != ri) {
+                btns[ri].classList.remove("active");
+                contents[ri].classList.remove("block");
+                contents[ri].classList.add("hidden");
+              }
+            }
+          });
+        }
+      }
+    </script>
+
+  </body>
+</html>

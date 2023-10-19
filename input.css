@@ -19,3 +19,24 @@ footer {
   padding: 1rem 0;
   text-align: center;
 }
+
+#tabs {
+  @apply border-slate-300 border-b mt-10;
+  > ul {
+    @apply flex list-none;
+    > li {
+      &.active {
+        @apply border-slate-300 border-b-[#faf7f5] border-b-2 mb-[-1px] border-s border-t border-t-4 border-e rounded-t;
+        > button {
+          @apply font-bold text-black;
+        }
+      }
+    }
+  }
+  .tabs-btn {
+    @apply my-1 px-2 sm:px-5 py-2 sm:py-3 text-xs sm:text-base md:text-lg;
+  }
+  #tabsContents {
+    @apply border-slate-300 border-t border-s border-e p-5;
+  }
+}
