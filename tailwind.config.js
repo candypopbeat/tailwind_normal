@@ -2,11 +2,11 @@
 module.exports = {
   // 監視対象
   content: [
-    "./index.html"
+    "*.html"
   ],
   // ミニファイ対象
   purge: [
-    "./index.html"
+    "*.html"
   ],
   theme: {
     // デフォルト値の継承と上書き
@@ -20,53 +20,13 @@ module.exports = {
       //   '2xl': "1536px"
       // }
     },
-    // 新規ブレークポイント、デフォルトは効かなくなる
-    screens: {
-      sp: "400px",
-      tb: "768px",
-      pc: "1280px",
-    },
+    container: {
+      center: true,
+    }
   },
   plugins: [
     // テーマのdaisyUI読込
     require("daisyui"),
-    function({addComponents}) {
-      addComponents({
-        // コンテナサイズのデフォルト値
-        // ".container": {
-        //   maxWidth: "100%",
-        //   "@screen sm": {
-        //     maxWidth: "640px",
-        //   },
-        //   "@screen md": {
-        //     maxWidth: "768px",
-        //   },
-        //   "@screen lg": {
-        //     maxWidth: "1024px",
-        //   },
-        //   "@screen xl": {
-        //     maxWidth: "1280px",
-        //   },
-        //   "@screen 2xl": {
-        //     maxWidth: "1536px",
-        //   },
-        // }
-
-        // 新規コンテナサイズ
-        ".container": {
-          maxWidth: "95%",
-          "@screen sp": {
-            maxWidth: "80%",
-          },
-          "@screen tb": {
-            maxWidth: "768px",
-          },
-          "@screen pc": {
-            maxWidth: "1200px"
-          }
-        }
-      })
-    },
   ],
   daisyui: {
     // 使用テーマ
